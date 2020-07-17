@@ -12,4 +12,6 @@ c)
 
 ## Exercise II
 
+Answer:
+
 
