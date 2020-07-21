@@ -120,9 +120,7 @@ class SortingRobot:
                 SortingRobot.swap_item(self)
                 SortingRobot.move_left(self)
 
-            # if SortingRobot.compare_item(self) == None and SortingRobot.can_move_left(self) == False:
-            #     SortingRobot.swap_item(self)
-            #     SortingRobot.set_light_off(self)
+        SortingRobot.swap_item(self)
 
 
 
