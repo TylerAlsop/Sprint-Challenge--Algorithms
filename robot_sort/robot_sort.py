@@ -103,26 +103,29 @@ class SortingRobot:
 
         while SortingRobot.light_is_on(self):
 
-            while SortingRobot.can_move_right(self):
-                SortingRobot.move_right(self)
-
-                if SortingRobot.compare_item(self) == 1:
-                    SortingRobot.move_right(self)
-                else:
+            while SortingRobot.move_right(self):
+                
+                if SortingRobot.compare_item(self) == -1:
                     SortingRobot.swap_item(self)
-            SortingRobot.swap_item(self)
+            
 
-            while SortingRobot.can_move_left(self):
-                SortingRobot.move_left(self)
-
-                if SortingRobot.compare_item(self) == 1:
-                    SortingRobot.swap_item(self)
-
-            if SortingRobot.compare_item == None:
+            if SortingRobot.compare_item(self) == None and SortingRobot.can_move_right(self) == False:
                 SortingRobot.swap_item(self)
-            SortingRobot.move_right(self)
+                SortingRobot.set_light_off(self)
 
-            SortingRobot.set_light_off(self)
+            else:
+                while SortingRobot.move_left(self):
+                
+                    if SortingRobot.compare_item(self) == None:
+                        SortingRobot.swap_item(self)
+                        SortingRobot.move_right(self)
+                        SortingRobot.swap_item(self)
+    
+
+            
+                    
+
+
 
 
 
